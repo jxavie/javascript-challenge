@@ -1,225 +1,167 @@
-* {
-  box-sizing: border-box;
-  font-family: Ubuntu, sans-serif;
-}
-
-html,
-body {
-  height: 100%;
-  padding: 0;
+body, html {
+  height: 100vh;
   margin: 0;
+  font-family: monospace;
 }
 
-/* The wrapper contains all of the page's content besides the footer, which is pushed to the bottom of the page */
-.wrapper {
-  position: relative;
-  min-height: 100%;
-  padding-bottom: 130px;
-  overflow: auto;
+.bg-image {
+  background-image: url("../images/alien_tunnel_alt2.jpg");
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation-name: animate_image;
+  animation-duration: 10s;
 }
 
-/* The footer is positioned at the bottom of the page */
-.footer {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  min-height: 100px;
-  background: #4e5d6c;
+.bg-text {
+  color: aliceblue;
+  font-size: 5vh;
+  opacity: 0.8;
+  z-index: 2;
+  padding-right: 20px;
+  filter: blur(1px);
+  text-align: right;
+  animation-name: animate_text;
+  animation-duration: 5s;
 }
 
-/* The code styles the text at the bottom of the footer */
-.footer > .bottom {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 5px;
-  background: #1b3146;
+.navbar-brand{
+  background-color: rgb(0,0,0);
+  background-color: rgba(0, 0, 0, 0);
+  color: aliceblue;
+  font-size: 5vh;
+  filter: blur(1px);
+  opacity: 0.8;
+  z-index: 2;
+  animation-name: animate_nav;
+  animation-duration: 8s;
 }
 
-.navbar {
-  padding: 5px;
-  margin: 0;
-}
-
-/* This CSS styles the ufo icon in the navbar */
-.nav-ufo {
-  position: absolute;
-  bottom: 5px;
-  left: 150px;
-  width: 35px;
-  color: white;
-}
-
-/* Adding styles to the aside and filter form */
-.ufo-form {
-  margin-top: 50px;
-}
-
-.filters .panel-body {
-  padding: 0;
-}
-
-.filters {
-  margin-top: 10px;
+h4 {
+  color: aliceblue;
+  filter: blur(1px);
 }
 
 select {
-  display: block;
-  width: 100%;
-  padding: 8px;
-  color: #8e979f;
-  outline: none;
-}
-
-#table-area th {
+  width: 200px !important;
   text-align: center;
+  text-align-last: center;
+  margin-top: 5px;
 }
 
-#table-area th:first-child,
-#table-area th:nth-child(2),
-#table-area th:nth-child(6) {
-  min-width: 70px;
+.custom-select {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: aliceblue;
+  filter: blur(1px);
+  font-size: 20px;
 }
 
-.loader {
-  margin-top: 50px;
+.btn-style {
+  font-size: 20px;
+  width: 200px;
+  margin-top: 5px;
+  color: aliceblue;
+  filter: blur(1px);
 }
 
-.margin-top-50 {
-  margin-top: 50px;
+.options-div {
+  width: 15%;
+  height: 70%;
+  top: 15%;
+  left: 2.5%;
+  background-color: rgba(0, 0, 0, 0.001);
+  animation-name: animate_dropdown;
+  animation-duration: 14s;
 }
 
-/* The styles for the parallax */
-.hero {
-  position: relative;
-  height: 550px;
-  padding: 20px;
-  margin: 0;
-  background: black;
-  background-image: url("../images/nasa.jpg");
-  background-attachment: fixed;
-  background-position: bottom center;
-  background-size: cover;
+.table-div {
+  width: 79.5%;
+  height: 70%;
+  position: absolute;
+  top: 15%;
+  right: 2.5%;
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow-y: auto;
+  filter: blur(1px);
+  font-size: 20px;
+  animation-name: animate_table;
+  animation-duration: 12s;
 }
 
-.hero h1 {
-  margin-top: 200px;
-  font-size: 0.1rem;
-  animation: title 1.2s forwards linear;
+#ufo-table {
+  color: aliceblue;
 }
 
-.hero p {
-  font-size: 2rem;
-  opacity: 0;
-  animation: subtitle 1.2s forwards linear;
-  animation-delay: 1.2s;
+th {
+  position: sticky;
+  top: 0;
+  background-color: rgba(0, 0, 0);
 }
 
-/* input placeholder color changes */
-.form-control::-webkit-input-placeholder {
-  /* Chrome/Opera/Safari */
-  color: #8e979f;
-}
-
-.form-control::-moz-placeholder {
-  /* Firefox 19+ */
-  color: #8e979f;
-}
-
-.form-control:-ms-input-placeholder {
-  /* IE 10+ */
-  color: #8e979f;
-}
-
-.form-control:-moz-placeholder {
-  /* Firefox 18- */
-  color: #8e979f;
-}
-
-/* media queries which will only be activated at specific screen sizes */
-@media (max-width: 800px) {
-  #table-area td {
-    font-size: 1em;
-  }
-}
-
-@media (max-width: 500px) {
-  #table-area thead {
-    display: none;
-  }
-
-  #table-area tr td:first-child {
-    font-size: 1.8em;
-    font-weight: bold;
-    background: #1b3146;
-  }
-
-  #table-area tr td:last-child {
-    margin-bottom: 20px;
-  }
-
-  #table-area tr td:last-child::after {
-    display: block;
-    width: 100%;
-    height: 1px;
-    margin-top: 20px;
-    content: " ";
-    background: aliceblue;
-  }
-
-  #table-area td {
-    font-size: 1.25em;
-  }
-
-  #table-area tbody td {
-    display: block;
-    text-align: center;
-  }
-
-  #table-area tbody td::before {
-    display: block;
-    font-size: 1.4em;
-    font-weight: bold;
-    text-align: center;
-    content: attr(data-th);
-  }
-
-  .hero h1 {
-    animation: smaller-title 1.2s forwards linear;
-  }
-}
-
-/* keyframe animations which will be used to animate the title */
-@keyframes title {
+@keyframes animate_image {
   from {
-    opacity: 0;
+    filter: blur(100px);
+    filter: brightness(0);
   }
-
   to {
-    font-size: 7.5rem;
-    opacity: 1;
+    filter: blur(0px);
+    filter: brightness(1);
   }
 }
 
-@keyframes smaller-title {
-  from {
-    opacity: 0;
+@keyframes animate_text {
+  0% {
+    visibility: hidden;
   }
-
-  to {
-    font-size: 5.5rem;
-    opacity: 1;
+  80% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 0.8;
+    visibility: visible;
   }
 }
 
-@keyframes subtitle {
-  from {
-    opacity: 0;
+@keyframes animate_nav {
+  0% {
+    visibility: hidden;
   }
+  80% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 0.8;
+    visibility: visible;
+  }
+}
 
-  to {
+@keyframes animate_dropdown {
+  0% {
+    visibility: hidden;
+  }
+  80% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
     opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes animate_table {
+  0% {
+    visibility: hidden;
+  }
+  80% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
   }
 }
